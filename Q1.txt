@@ -1,0 +1,77 @@
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ABCLtd
+{
+    public class Employee
+    {
+       //Using Property Values are aisigned and access 
+        public int EmployeeId { private get;  set; }
+        public string EmployeeName { get;  set;  }
+        public string EmployeeAddress {private get; set; }
+        public string EmployeeCity {private get;  set; }
+        public string EmployeeDepartment {private get; set; }
+        public double Salary { get; set; }
+
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ABCLtd;
+namespace Task1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee[] emp = new Employee[2];// Array of object creation and initialization
+
+            Console.WriteLine("Enter Empolyee Details:");
+            for (int i = 0; i < emp.Length; i++)
+            { 
+                Console.WriteLine("Enter details for Employee:" + i);
+                emp[i] = new Employee();// Actual Object creation inside loop
+
+                //Taking Employee Details from user
+                Console.WriteLine("Employee ID:");            
+                emp[i].EmployeeId = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Employee Name:");
+                emp[i].EmployeeName = Console.ReadLine();
+
+                Console.WriteLine("Employee Address:");
+                emp[i].EmployeeAddress = Console.ReadLine();
+
+                Console.WriteLine("Employee City:");
+                emp[i].EmployeeCity = Console.ReadLine();
+
+                Console.WriteLine("Employee Department:");
+                emp[i].EmployeeDepartment = Console.ReadLine();
+
+                Console.WriteLine("Employee Salary:");
+                emp[i].Salary = Convert.ToDouble(Console.ReadLine());
+            }
+
+            //Display Employee Name and Salary
+            Console.WriteLine("*****Employee Details*****");
+            for (int i = 0; i < emp.Length; i++)
+            {
+                Console.WriteLine("Employee Name:"+emp[i].EmployeeName);
+                Console.WriteLine("Employee Salary:"+emp[i].Salary);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}

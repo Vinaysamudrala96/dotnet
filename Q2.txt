@@ -1,0 +1,129 @@
+Q2. Amit wants to develop an Arithmetic Calculator to perform some arithmetic functions. Develop a program to achieve the same.
+
+Task 1: Create a library project to define a class ArithmeticOperations to perform the operations like Add, Subtract, Multiply, Divide and Modulus on two numbers of integer type, and double type.
+Use the class in a console application. Accept the details from the user and perform the operation based on user’s choice.
+
+
+
+
+//Library file Arithmatic operation
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MathCalLib
+{
+    public class ArithmaticOperations
+    {
+        public int Calc(int num1, int num2,int ch)
+        {
+            int result=0;
+            switch(ch) //switch for calculating arithmatic operation on integer values
+            {
+                case 1:
+                    result=  num1 + num2;
+                    break;
+                case 2:
+                    result = num1 - num2;
+                    break;
+                case 3:
+                    result = num1 * num2;
+                    break;
+                case 4:
+                    result = num1 / num2;
+                    break;
+                case 5:
+                    result = num1 % num2;
+                    break;
+                default:
+                    Console.WriteLine("Invalid Opration choice");
+                    break;
+
+            }
+            return result;
+        }
+
+        public double Calc(double num1, double num2, int ch)
+        {
+            double result = 0;
+            switch (ch)//switch for calculating arithmatic operation on double values
+            {
+                case 1:
+                    result = num1 + num2;
+                    break;
+                case 2:
+                    result = num1 - num2;
+                    break;
+                case 3:
+                    result = num1 * num2;
+                    break;
+                case 4:
+                    result = num1 / num2;
+                    break;
+                case 5:
+                    result = num1 % num2;
+                    break;
+                default:
+                    Console.WriteLine("Invalid Opration choice");
+                    break;
+
+            }
+            return result;
+        }
+
+    }
+}
+
+
+
+//Console File
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MathCalLib;
+namespace Calculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArithmaticOperations arop = new ArithmaticOperations();
+            int ch;
+            //Taking users choice for operation
+            Console.WriteLine("*****Menu*****\n 1.Addition \n 2.Substraction \n 3.Multiplication \n 4.Division \n 5.Modulus\n ");
+            Console.WriteLine("Enter Your Choice:");
+            ch = Convert.ToInt32(Console.ReadLine());
+
+            //Taking user choice for data type of value
+            Console.WriteLine("Enter 1 for number value OR enter 2 for Decimal value:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            if (n == 1)
+            {
+                Console.WriteLine("Enter Number1:");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Number2:");
+                int num2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Result=>" + arop.Calc(num1, num2, ch));//calling Calc method for integer values
+            }
+            else if (n == 2)
+            {
+                Console.WriteLine("Enter Number1:");
+                double num1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Enter Number2:");
+                double num2 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Result=>" + arop.Calc(num1, num2, ch));//calling Calc method for double values
+            }
+            else
+                Console.WriteLine("Enter only 1 for number value OR enter 2 for Decimal value:");
+
+            Console.ReadKey();
+        }
+    }
+}
