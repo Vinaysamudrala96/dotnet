@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SwitchCaseDemoQ3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int number;
+            //Taking input from user
+            Console.Write("Enter Number: ");
+            number = Convert.ToInt32(Console.ReadLine());
+
+            switch (number)//use of switch case
+            {
+                case 1:
+                    Console.WriteLine("Entered Number is: " + number);//message for case 1
+                    break;
+
+                case 2:
+                    Console.WriteLine("Entered Number is: " + number);//message for case 2
+                    break;
+
+                case 3:
+                    Console.WriteLine("Entered Number is: " + number);//message for case 3
+                    break;
+
+                case 4:
+                    Console.WriteLine("Entered Number is: " + number);//message for case 4
+                    break;
+
+                case 5:
+                    Console.WriteLine("Entered Number is: " + number);//message for case 5
+                    break;
+
+                default:
+                    Console.WriteLine("Entered Wrong number ");//message for default or wrong entry case
+                    break;
+            }
+
+            Console.ReadKey();
+        }
+    }
+}

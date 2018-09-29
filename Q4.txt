@@ -1,0 +1,98 @@
+//Student Class file
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace St.JosephQ4
+{
+    public class Student
+    { 
+        //Properties are used to get and set the valus 
+        public int RollNumber { get; set; }
+        public string StudentsName { get; set; }
+        public int Age { get; set; }
+        public char Gender { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public string Address { get; set; }
+        public float Percentage { get; set; }
+    }
+}
+
+
+//Console file with Operations
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace St.JosephQ4
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int size;
+            //User input taken for number of students details will be filled
+            Console.WriteLine("How many Students's Info");
+            size = Convert.ToInt32(Console.ReadLine());
+            Student[] s = new Student[size];// Array of object created for Student class
+
+           // Console.WriteLine("Enter Student details:");
+           
+            for (int i = 0; i <s.Length ; i++)//loop for taking multiple students data
+            {
+                s[i] = new Student();//object initialization
+                
+                //Talking students details 
+                Console.WriteLine("Enter Student details for student : "+(i+1));
+                Console.Write("Enter Student's Roll Number:");
+                s[i].RollNumber = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Student's Name:");
+                s[i].StudentsName =Console.ReadLine();
+
+                Console.Write("Enter Student's Age:");
+                s[i].Age = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Student's Gender 'M' Or 'F':");
+                s[i].Gender = Convert.ToChar(Console.ReadLine());
+
+                Console.Write("Enter Student's Date of Birth (DD/MM/YY):");
+                s[i].DateOfBirth= Convert.ToDateTime(Console.ReadLine());
+
+                Console.Write("Enter Student's Address:");
+                s[i].Address = Console.ReadLine();
+
+                Console.Write("Enter Student's Percentage:");
+                s[i].Percentage = float.Parse(Console.ReadLine());
+
+            }
+
+            for (int i = 0; i < s.Length; i++)//loop for displaying students details
+            {
+                Console.WriteLine("Student details for student : " + (i+1));
+                Console.Write("\nStudent's Roll Number:-"+s[i].RollNumber);
+                Console.Write("\nStudent's Name:-"+ s[i].StudentsName);
+                Console.Write("\nStudent's Age:-"+s[i].Age);
+                Console.Write("\nStudent's Gender:-"+s[i].Gender);
+                Console.Write("\nStudent's Date of Birth:-"+s[i].DateOfBirth);
+                Console.Write("\nStudent's Address:-"+s[i].Address);
+                Console.Write("\nStudent's Percentage:-"+s[i].Percentage);
+
+
+
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+}

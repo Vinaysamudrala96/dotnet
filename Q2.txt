@@ -18,68 +18,61 @@ namespace MathCalLib
 {
     public class ArithmaticOperations
     {
-        public int Calc(int num1, int num2,int ch)
+        public  int AddInt(int num1, int num2)//
         {
-            int result=0;
-            switch(ch) //switch for calculating arithmatic operation on integer values
-            {
-                case 1:
-                    result=  num1 + num2;
-                    break;
-                case 2:
-                    result = num1 - num2;
-                    break;
-                case 3:
-                    result = num1 * num2;
-                    break;
-                case 4:
-                    result = num1 / num2;
-                    break;
-                case 5:
-                    result = num1 % num2;
-                    break;
-                default:
-                    Console.WriteLine("Invalid Opration choice");
-                    break;
-
-            }
-            return result;
+            return num1 + num2;
+        }
+        public int SubstractInt(int num1, int num2)
+        {
+            return num1 - num2;
+        }
+        public  int MultiplyInt(int num1, int num2)
+        {
+            return num1 * num2;
+        }
+        public int DivideInt(int num1, int num2)
+        {
+            return num1 / num2;
+        }
+        public int ModulusInt(int num1, int num2)
+        {
+            return num1 % num2;
         }
 
-        public double Calc(double num1, double num2, int ch)
-        {
-            double result = 0;
-            switch (ch)//switch for calculating arithmatic operation on double values
-            {
-                case 1:
-                    result = num1 + num2;
-                    break;
-                case 2:
-                    result = num1 - num2;
-                    break;
-                case 3:
-                    result = num1 * num2;
-                    break;
-                case 4:
-                    result = num1 / num2;
-                    break;
-                case 5:
-                    result = num1 % num2;
-                    break;
-                default:
-                    Console.WriteLine("Invalid Opration choice");
-                    break;
 
-            }
-            return result;
+        public double AddDouble(double num1, double num2)
+        {
+            return num1 + num2;
         }
+        public double SubstractDouble(double num1, double num2)
+        {
+            return num1 - num2;
+        }
+        public double MultiplyDouble(double num1, double num2)
+        {
+            return num1 * num2;
+        }
+        public double DivideDouble(double num1, double num2)
+        {
+            return num1 / num2;
+        }
+        public double ModulusDouble(double num1, double num2)
+        {
+            return num1 % num2;
+        }
+
+
+
+     
 
     }
 }
 
 
 
-//Console File
+//Console File for Calculate Class
+
+
 
 using System;
 using System.Collections.Generic;
@@ -94,36 +87,162 @@ namespace Calculator
         static void Main(string[] args)
         {
             ArithmaticOperations arop = new ArithmaticOperations();
-            int ch;
+            int ch,n;
+            char choice;
             //Taking users choice for operation
-            Console.WriteLine("*****Menu*****\n 1.Addition \n 2.Substraction \n 3.Multiplication \n 4.Division \n 5.Modulus\n ");
-            Console.WriteLine("Enter Your Choice:");
-            ch = Convert.ToInt32(Console.ReadLine());
-
-            //Taking user choice for data type of value
-            Console.WriteLine("Enter 1 for number value OR enter 2 for Decimal value:");
-            int n = Convert.ToInt32(Console.ReadLine());
-
-            if (n == 1)
+            do
             {
-                Console.WriteLine("Enter Number1:");
-                int num1 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter Number2:");
-                int num2 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Result=>" + arop.Calc(num1, num2, ch));//calling Calc method for integer values
-            }
-            else if (n == 2)
-            {
-                Console.WriteLine("Enter Number1:");
-                double num1 = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Enter Number2:");
-                double num2 = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Result=>" + arop.Calc(num1, num2, ch));//calling Calc method for double values
-            }
-            else
-                Console.WriteLine("Enter only 1 for number value OR enter 2 for Decimal value:");
+                Console.WriteLine("*****Menu*****\n 1.Addition \n 2.Substraction \n 3.Multiplication \n 4.Division \n 5.Modulus\n 6.Exit\n\n");
+                Console.WriteLine("Enter Your Choice:");
+                ch = Convert.ToInt32(Console.ReadLine());
 
-            Console.ReadKey();
+
+                switch (ch) //switch for calculating arithmatic operation on integer values
+                {
+
+                    case 1:
+
+                        //Taking user choice for data type of value
+                        Console.WriteLine("Enter 1 for number value OR enter 2 for Decimal value:");
+                         n = Convert.ToInt32(Console.ReadLine());
+                        if (n == 1)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            int num1 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            int num2 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.AddInt(num1, num2));//calling AddInt method for integer values
+                        }
+                        else if (n == 2)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            double num1 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            double num2 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.AddDouble(num1, num2));//calling Adddouble method for double values
+                        }
+                        else
+                            Console.WriteLine("Enter only 1 for number value OR enter 2 for Decimal value:");
+                        break;
+                    case 2:
+
+
+                        //Taking user choice for data type of value
+                        Console.WriteLine("Enter 1 for number value OR enter 2 for Decimal value:");
+                         n = Convert.ToInt32(Console.ReadLine());
+
+                        if (n == 1)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            int num1 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            int num2 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.SubstractInt(num1, num2));//calling SubstractInt method for integer values
+                        }
+                        else if (n == 2)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            double num1 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            double num2 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.SubstractDouble(num1, num2));//calling Calc method for double values
+                        }
+                        else
+                            Console.WriteLine("Enter only 1 for number value OR enter 2 for Decimal value:");
+                        break;
+                    case 3:
+
+
+                        //Taking user choice for data type of value
+                        Console.WriteLine("Enter 1 for number value OR enter 2 for Decimal value:");
+                        n = Convert.ToInt32(Console.ReadLine());
+
+                        if (n == 1)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            int num1 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            int num2 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.MultiplyInt(num1, num2));//calling Calc method for integer values
+                        }
+                        else if (n == 2)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            double num1 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            double num2 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.SubstractDouble(num1, num2));//calling Calc method for double values
+                        }
+                        else
+                            Console.WriteLine("Enter only 1 for number value OR enter 2 for Decimal value:");
+                        break;
+                    case 4:
+
+
+                        //Taking user choice for data type of value
+                        Console.WriteLine("Enter 1 for number value OR enter 2 for Decimal value:");
+                         n = Convert.ToInt32(Console.ReadLine());
+
+                        if (n == 1)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            int num1 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            int num2 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.DivideInt(num1, num2));//calling Calc method for integer values
+                        }
+                        else if (n == 2)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            double num1 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            double num2 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.DivideDouble(num1, num2));//calling Calc method for double values
+                        }
+                        else
+                            Console.WriteLine("Enter only 1 for number value OR enter 2 for Decimal value:");
+                        break;
+                    case 5:
+
+
+                        //Taking user choice for data type of value
+                        Console.WriteLine("Enter 1 for number value OR enter 2 for Decimal value:");
+                         n = Convert.ToInt32(Console.ReadLine());
+
+                        if (n == 1)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            int num1 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            int num2 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.ModulusInt(num1, num2));//calling Calc method for integer values
+                        }
+                        else if (n == 2)
+                        {
+                            Console.WriteLine("Enter Number1:");
+                            double num1 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Enter Number2:");
+                            double num2 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Result=>" + arop.ModulusDouble(num1, num2));//calling Calc method for double values
+                        }
+                        else
+                            Console.WriteLine("Enter only 1 for number value OR enter 2 for Decimal value:");
+                        break;
+                    case 6:
+                        return;
+
+                    default:
+                        Console.WriteLine("Invalid Opration choice");
+                        break;
+
+                }
+
+                Console.WriteLine(" Enter 'y' or ' Y' to continue or 'n' to Exit:");
+                choice = Convert.ToChar(Console.ReadLine());
+                //Console.ReadKey();
+
+            } while (choice == 'Y' || choice == 'y');
         }
     }
 }
+9:31 AM 9/29/2018

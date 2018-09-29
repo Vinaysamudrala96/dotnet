@@ -1,5 +1,19 @@
+Q1. ABC private Ltd wants to maintain Employee’s Information. You need to define an Entity class to hold Employee Information and generate a DLL. You also need to test this class usage by writing a Console application as a client.
+
+Task 1: Define a class called “Employee” with the following fields:
+
+EmployeeId, Employee Name, Address, City, Department, Salary 
+Define the functions to set the values of each property and to get the value of the Salary in the class: Compile the class to generate a DLL. 
+
+Task 2: Create a Console application and use this class. Create an object of this class. Accept the values from the user and assign the members.
+
+Task 3: Modify the console application to define an array of objects to hold 10 records of Employee. Accept the details of 10 employees from the user using a loop. Display the Employee Name and Salary of all the employees using.
+
+Task 4: Modify the class to add properties using get, set blocks. Modify the console application to use the properties.
 
 
+
+//Library file for Employee class
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +37,8 @@ namespace ABCLtd
 
 
 
+
+//Console File for Employee class
 using System;
 using System.Collections.Generic;
 using System.Linq;
