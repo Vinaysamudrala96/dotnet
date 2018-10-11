@@ -1,0 +1,45 @@
+<Window x:Class="Lab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab"
+        mc:Ignorable="d"
+        Title="Hospital" Height="350" Width="525">
+
+    <DockPanel  Margin="70,0,-69,0" RenderTransformOrigin="0.483,0.585">
+        <Border DockPanel.Dock="Top" BorderThickness="0" HorizontalAlignment="Center">
+            <StackPanel  Margin="3" Orientation="Horizontal">
+                <Label FontWeight="Black" FontSize="30" HorizontalAlignment="Center" Width="322" Content="HelpLine Hospitals"/>
+                <Image Source="C:\Users\sallaudd\Downloads\emergency.jpg" Height="50" Width="90" VerticalAlignment="Top"/>
+
+            </StackPanel>
+        </Border>
+        <Grid Width="544" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*" MinWidth="50" MaxWidth="800"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="1" Grid.Column="0" Margin="52,29,108,-46"
+             VerticalAlignment="Center" Grid.ColumnSpan="2" FontWeight="Black">User Name:</Label>
+            <TextBox Grid.Row="1" Margin="215,35,195,-41"
+             Height="26"  VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <Label Grid.Row="1" Grid.Column="0" Margin="52,69,108,-85"
+             VerticalAlignment="Center" Grid.ColumnSpan="2" RenderTransformOrigin="0.563,0.455" FontWeight="Black">Password:</Label>
+            <TextBox Grid.Row="1" Margin="215,73,195,-80"
+             Height="26"  VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <Button Grid.Row="1" Grid.Column="1" Margin="87,145,387,-149" Padding="2">Ok</Button>
+            <Button Grid.Row="1" Grid.Column="1" Margin="215,145,259,-149" Padding="2">Cancle</Button>
+
+        </Grid>
+    </DockPanel>
+
+
+
+
+</Window>
