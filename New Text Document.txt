@@ -1,0 +1,100 @@
+use Sep19CHN
+
+create table Pnagaraj.Department
+(
+DeptId int primary key,
+DeptName varchar(20)
+)
+
+create table Pnagaraj.Employees
+(
+EmpId int identity(1000,1),
+EmpName varchar(20),
+EmpLocation varchar(20),
+EmpContact bigint,
+DeptId int,
+foreign key(DeptId) References Pnagaraj.Department(DeptId)
+)
+
+insert into Pnagaraj.Department values(10,'HOD')
+insert into Pnagaraj.Department values(20,'Teacher')
+insert into Pnagaraj.Department values(30,'Student')
+
+select * from Pnagaraj.Department
+
+select * from Pnagaraj.Employees
+
+insert into Pnagaraj.Employees values('Nagaraju','Hyderabad',9553565145,10)
+insert into Pnagaraj.Employees values('Nagg','Chennai',9564852145,20)
+insert into Pnagaraj.Employees values('Rajj','Bengalore',8341426724,30)
+
+delete from Pnagaraj.Employees where DeptId=10
+
+----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+
+alter proc Pnagaraj.usp_Department
+
+@eDeptId int as begin 
+select * from Pnagaraj.Department where DeptId=@eDeptId
+end
+exec Pnagaraj.usp_Department 1001
+
+----------------------------------------------------------------------------------------------------------------
+
+CREATE proc Pnagaraj.usp_DisplayEmployees
+AS
+BEGIN
+select * from Pnagaraj.Employees 
+END
+
+---------------------------------------------------------------------------------------------------------------
+
+CREATE proc Pnagaraj.usp_AddEmployee
+@eName varchar(20),
+@eLoc varchar(20),
+@ePh bigint,
+@eDeptId int
+As
+BEGIN
+insert into Pnagaraj.Employees values(@eName,@eLoc,@ePh,@eDeptId)
+END
+
+----------------------------------------------------------------------------------------------------------------
+
+CREATE proc Pnagaraj.usp_EditEmployee
+@eName varchar(20),
+@eLoc varchar(20),@ePh bigint, @eDeptId int,@eId int
+AS
+BEGIN
+Update Pnagaraj.Employees set EmpName=@eName, EmpLocation=@eLoc,EmpContact=@ePh, DeptId=@eDeptId
+where EmpId= @eId
+END
+
+----------------------------------------------------------------------------------------------------------------
+
+create proc Pnagaraj.usp_GetDepartment
+AS
+Begin
+select * from Pnagaraj.Department
+End
+
+----------------------------------------------------------------------------------------------------------------
+
+create proc Pnagaraj.usp_NextEmpId
+@newEmpId int out
+AS
+BEGIN
+set @newEmpId=(select IDENT_CURRENT('Geetha.Employee')+ident_incr('Geetha.Employee'))
+END
+
+---------------------------------------------------------------------------------------------------------------
+
+create proc Pnagaraj.usp_SearchEmployee
+ @eId int
+AS
+BEGIN
+select * from Pnagaraj.Employees where EmpId=@eId
+END
+
+---------------------------------------------------------------------------------------------------------------
